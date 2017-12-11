@@ -36,4 +36,14 @@ public class CountryCodes {
 
     return myMap;
   }
+
+  public void Breadth() {
+    final Iterator<String> bf = new BreadthFirstIterator<>(myMap, AR);
+    int amt = 0;
+    while (bf.hasNext() && amt <= 5) {
+      final String country = bf.next();
+      System.out.println(country);
+      amt++;
+    }
+  }
 }
