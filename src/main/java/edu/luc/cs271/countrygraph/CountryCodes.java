@@ -50,7 +50,13 @@ public class CountryCodes {
     final Iterator<String> bf = new BreadthFirstIterator<>(myMap, AR);
     while (bf.hasNext()) {
       final String country = bf.next();
-      System.out.println("Breadth first: " + country);
+      System.out.println("Breadth first starting from Argentina: " + country);
+    }
+    
+    final Iterator<String> bfBO = new BreadthFirstIterator<>(myMap, BO);
+    while (bfBO.hasNext()) {
+      final String country = bfBO.next();
+      System.out.println("Breadth first starting from Bolivia: " + country);
     }
   }
 
@@ -58,7 +64,13 @@ public class CountryCodes {
     final Iterator<String> cf = new ClosestFirstIterator<>(myMap, AR);
     while (cf.hasNext()) {
       final String country = cf.next();
-      System.out.println("Closest first: " + country);
+      System.out.println("Closest first starting from Argentina: " + country);
+    }
+    
+    final Iterator<String> cfBO = new ClosestFirstIterator<>(myMap, BO);
+    while (cfBO.hasNext()) {
+      final String country = cfBO.next();
+      System.out.println("Closest first starting from Bolivia: " + country);
     }
   }
 
@@ -66,7 +78,13 @@ public class CountryCodes {
     final Iterator<String> df = new BreadthFirstIterator<>(myMap, AR);
     while (df.hasNext()) {
       final String country = df.next();
-      System.out.println("Depth first: " + country);
+      System.out.println("Depth first starting from Argentina: " + country);
+    }
+    
+    final Iterator<String> dfBO = new BreadthFirstIterator<>(myMap, BO);
+    while (dfBO.hasNext()) {
+      final String country = dfBO.next();
+      System.out.println("Depth first starting from Bolivia: " + country);
     }
   }
 
@@ -75,8 +93,16 @@ public class CountryCodes {
     int amt = 0;
     while (rw.hasNext() && amt <= 5) {
       final String country = rw.next();
-      System.out.println("Random walk: " + country);
+      System.out.println("Random walk starting from Argentina: " + country);
       amt++;
+    }
+    
+    final Iterator<String> rwBO = new RandomWalkIterator<>(myMap, BO);
+    int amt0 = 0;
+    while (rwBO.hasNext() && amt0 <= 5) {
+      final String country = rwBO.next();
+      System.out.println("Random walk starting from Bolivia: " + country);
+      amt0++;
     }
   }
 }
