@@ -12,7 +12,7 @@ public class CountryCodes {
 
   static final String AR = "Argentina";
   static final String CL = "Chile";
-  static final String RB = "Bolivia";
+  static final String BO = "Bolivia";
   static final String PY = "Paraguay";
   static final String BR = "Brazil";
   static final String UY = "Uruguay";
@@ -27,47 +27,46 @@ public class CountryCodes {
 
     myMap.addVertex(AR);
     myMap.addVertex(CL);
-    myMap.addVertex(RB);
+    myMap.addVertex(BO);
     myMap.addVertex(PY);
     myMap.addVertex(BR);
     myMap.addVertex(UY);
 
     myMap.addEdge(AR, CL);
-    myMap.addEdge(AR, RB);
+    myMap.addEdge(AR, BO);
     myMap.addEdge(AR, PY);
     myMap.addEdge(AR, BR);
     myMap.addEdge(AR, UY);
+    myMap.addEdge(CL, BO);
+    myMap.addEdge(BO, PY);
+    myMap.addEdge(BO, BR);
+    myMap.addEdge(PY, BR);
+    myMap.addEdge(BR, UY);
 
     return myMap;
   }
 
   public void breadthFirst() {
     final Iterator<String> bf = new BreadthFirstIterator<>(myMap, AR);
-    int amt = 0;
-    while (bf.hasNext() && amt <= 5) {
+    while (bf.hasNext()) {
       final String country = bf.next();
       System.out.println("Breadth first: " + country);
-      amt++;
     }
   }
 
   public void closestFirst() {
     final Iterator<String> cf = new ClosestFirstIterator<>(myMap, AR);
-    int amt = 0;
-    while (cf.hasNext() && amt <= 5) {
+    while (cf.hasNext()) {
       final String country = cf.next();
       System.out.println("Closest first: " + country);
-      amt++;
     }
   }
 
   public void depthFirst() {
     final Iterator<String> df = new BreadthFirstIterator<>(myMap, AR);
-    int amt = 0;
-    while (df.hasNext() && amt <= 5) {
+    while (df.hasNext()) {
       final String country = df.next();
       System.out.println("Depth first: " + country);
-      amt++;
     }
   }
 
