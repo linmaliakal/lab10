@@ -11,7 +11,7 @@ import org.jgrapht.traverse.*;
 
 public class Main {
 
-  public static void main(final String[] args) throws InterruptedException {
+  public static void main(final String[] args) {
     final Scanner input = new Scanner(System.in);
 
     Graph<String, DefaultEdge> myMap = new SimpleGraph<>(DefaultEdge.class);
