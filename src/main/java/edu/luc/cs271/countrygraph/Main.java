@@ -19,6 +19,6 @@ public class Main {
     myMap = newMap.createMap();
     System.out.println(myMap);
     
-    newMap.Breadth();
+    newMap.breadthFirst();
   }
 }

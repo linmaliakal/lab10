@@ -37,11 +37,41 @@ public class CountryCodes {
     return myMap;
   }
 
-  public void Breadth() {
+  public void breadthFirst() {
     final Iterator<String> bf = new BreadthFirstIterator<>(myMap, AR);
     int amt = 0;
     while (bf.hasNext() && amt <= 5) {
       final String country = bf.next();
+      System.out.println(country);
+      amt++;
+    }
+  }
+  
+  public void closestFirst() {
+    final Iterator<String> cf = new ClosestFirstIterator<>(myMap, DE);
+    int amt = 0;
+    while (cf.hasNext() && amt <= 5) {
+      final String country = cf.next();
+      System.out.println(country);
+      amt++;
+    }
+  }
+  
+  public void depthFirst() {
+    final Iterator<String> df = new BreadthFirstIterator<>(myMap, AR);
+    int amt = 0;
+    while (df.hasNext() && amt <= 5) {
+      final String country = df.next();
+      System.out.println(country);
+      amt++;
+    }
+  }
+  
+  public void randomWalk() {
+    final Iterator<String> rw = new RandomWalkIterator<>(myMap, AR);
+    int amt = 0;
+    while (rw.hasNext() && amt <= 5) {
+      final String country = rw.next();
       System.out.println(country);
       amt++;
     }
