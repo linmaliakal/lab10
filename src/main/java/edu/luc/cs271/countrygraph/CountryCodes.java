@@ -17,7 +17,11 @@ public class CountryCodes {
   static final String BR = "Brazil";
   static final String UY = "Uruguay";
 
-  final Graph<String, DefaultEdge> myMap = new SimpleGraph<>(DefaultEdge.class);
+  Graph<String, DefaultEdge> myMap = new SimpleGraph<>(DefaultEdge.class);
+
+  public CountryCodes(Graph<String, DefaultEdge> myMap) {
+    this.myMap = myMap;
+  }
 
   public Graph<String, DefaultEdge> createMap() {
 
@@ -46,9 +50,9 @@ public class CountryCodes {
       amt++;
     }
   }
-  
+
   public void closestFirst() {
-    final Iterator<String> cf = new ClosestFirstIterator<>(myMap, DE);
+    final Iterator<String> cf = new ClosestFirstIterator<>(myMap, AR);
     int amt = 0;
     while (cf.hasNext() && amt <= 5) {
       final String country = cf.next();
@@ -56,7 +60,7 @@ public class CountryCodes {
       amt++;
     }
   }
-  
+
   public void depthFirst() {
     final Iterator<String> df = new BreadthFirstIterator<>(myMap, AR);
     int amt = 0;
@@ -66,7 +70,7 @@ public class CountryCodes {
       amt++;
     }
   }
-  
+
   public void randomWalk() {
     final Iterator<String> rw = new RandomWalkIterator<>(myMap, AR);
     int amt = 0;
