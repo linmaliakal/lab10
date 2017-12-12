@@ -46,7 +46,7 @@ public class CountryCodes {
     int amt = 0;
     while (bf.hasNext() && amt <= 5) {
       final String country = bf.next();
-      System.out.println(country);
+      System.out.println("Breadth first: " + country);
       amt++;
     }
   }
@@ -56,7 +56,7 @@ public class CountryCodes {
     int amt = 0;
     while (cf.hasNext() && amt <= 5) {
       final String country = cf.next();
-      System.out.println(country);
+      System.out.println("Closest first: " + country);
       amt++;
     }
   }
@@ -66,7 +66,7 @@ public class CountryCodes {
     int amt = 0;
     while (df.hasNext() && amt <= 5) {
       final String country = df.next();
-      System.out.println(country);
+      System.out.println("Depth first: " + country);
       amt++;
     }
   }
@@ -76,7 +76,7 @@ public class CountryCodes {
     int amt = 0;
     while (rw.hasNext() && amt <= 5) {
       final String country = rw.next();
-      System.out.println(country);
+      System.out.println("Random walk: " + country);
       amt++;
     }
   }
